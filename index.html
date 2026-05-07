@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0073)file:///Users/ionutalexandruflorea/Downloads/portofoliu_investitie_2.html -->
+<!-- saved from url=(0073)file:///Users/ionutalexandruflorea/Downloads/portofoliu_investitie_5.html -->
 <html lang="ro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portofoliu Investiție — 7 Apartamente</title>
-<script src="./index_files/chart.umd.js"></script>
+<script src="./index_files/chart.umd.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -183,7 +183,7 @@ body{font-family:var(--font);background:var(--bg-t);color:var(--text);min-height
     <span class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span>Optimist 12%</span>
   </div>
   <div style="position:relative;width:100%;height:240px">
-    <canvas id="chart-port" role="img" aria-label="Grafic evolutie valoare portofoliu pe 3 ani" width="1662" height="480" style="display: block; box-sizing: border-box; height: 240px; width: 831px;">Valoare portofoliu pe 3 ani.</canvas>
+    <canvas id="chart-port" role="img" aria-label="Grafic evolutie valoare portofoliu pe 3 ani">Valoare portofoliu pe 3 ani.</canvas>
   </div>
 </div>
 
@@ -192,12 +192,9 @@ body{font-family:var(--font);background:var(--bg-t);color:var(--text);min-height
     <p class="section-label" style="margin-bottom:0">Evoluție curs EUR/RON · BNR istoric + proiecția ta</p>
     <button class="fx-reset" id="fx-reset-btn">Resetează proiecția</button>
   </div>
-  <div class="chart-legend" id="legend-fx">
-    <span class="legend-item"><span class="legend-dot" style="background:#888780"></span>Istoric BNR (trimestrial)</span>
-    <span class="legend-item"><span class="legend-dot" style="background:#185FA5"></span>Proiecția ta</span>
-  </div>
+  <div class="chart-legend" id="legend-fx"></div>
   <div style="position:relative;width:100%;height:260px">
-    <canvas id="chart-fx" role="img" aria-label="Grafic curs EUR/RON istoric si proiectie trimestriala" width="1662" height="520" style="display: block; box-sizing: border-box; height: 260px; width: 831px;">Curs EUR/RON 2022–2028.</canvas>
+    <canvas id="chart-fx" role="img" aria-label="Grafic curs EUR/RON istoric si proiectie trimestriala">Curs EUR/RON 2022–2028.</canvas>
   </div>
   <div class="fx-editor" id="fx-editor"><div class="fx-year-block">
       <div class="fx-year-title">Proiecție An 1 · Year 1</div>
@@ -297,74 +294,19 @@ body{font-family:var(--font);background:var(--bg-t);color:var(--text);min-height
 
 <div class="card">
   <p class="section-label">Cost suplimentar curs · Exchange rate premium vs. baseline 5.10</p>
-  <table class="cost-table" id="cost-table">
-    <thead><tr>
-      <th>Element</th>
-      <th class="num">La 5.10 (ref.) RON</th>
-      <th class="num">Proiecție RON</th>
-      <th class="num">Diferență EUR</th>
-      <th class="num">Diferență RON</th>
-    </tr></thead>
-    <tbody>
-      <tr><td>Avans (la semnare 5.30)</td><td class="num">953.190 RON</td><td class="num">990.570 RON</td><td class="num" style="color:#A32D2D">+€7.053</td><td class="num" style="color:#A32D2D">+37.380 RON</td></tr>
-      <tr><td>Rate An 1 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
-      <tr><td>Rate An 2 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
-      <tr><td>Rate An 3 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
-      <tr class="total-row"><td>Total supracost</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:#A32D2D">+€23.514</td><td class="num" style="color:#A32D2D">+124.622 RON</td></tr>
-      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 1</td><td class="num" colspan="2">—</td><td class="num">+€49.840</td><td class="num">+264.152 RON</td></tr>
-      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 3</td><td class="num" colspan="2">—</td><td class="num">+€161.801</td><td class="num">+857.543 RON</td></tr>
-    </tbody>
-  </table>
+  <table class="cost-table" id="cost-table"></table>
 </div>
 
 <div class="card">
   <p class="section-label">Detalii apartamente · Apartment breakdown</p>
   <div style="overflow-x:auto">
-    <table class="apt-table" id="apt-table"><thead><tr><th>Ap.</th><th>Tip</th><th>Etaj</th><th class="num">Preț (EUR)</th><th class="num">Avans (EUR)</th><th class="num">Avans (RON)</th><th class="num">Rată/lună (EUR)</th><th class="num">Rată/lună (RON)</th></tr></thead><tbody><tr><td><strong>Ap. 107</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 108</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 110</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 116</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 118</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 70</strong></td><td><span class="badge badge-d">Dublu 2C</span></td><td>Et. 4</td><td class="num">€134.000</td><td class="num">€40.200</td><td class="num">213.060 RON</td><td class="num">€2.606</td><td class="num">13.812 RON</td></tr><tr><td><strong>Ap. 96</strong></td><td><span class="badge badge-d">Dublu 2C</span></td><td>Et. 6</td><td class="num">€134.000</td><td class="num">€40.200</td><td class="num">213.060 RON</td><td class="num">€2.606</td><td class="num">13.812 RON</td></tr><tr class="total-row"><td colspan="3">Total</td><td class="num">€623.000</td><td class="num">€186.900</td><td class="num">990.570 RON</td><td class="num">€12.117</td><td class="num">64.220 RON</td></tr></tbody></table>
+    <table class="apt-table" id="apt-table"></table>
   </div>
 </div>
 
 <div class="card">
   <p class="section-label">Verdict investiție · Investment verdict</p>
-  <div class="verdict-box" id="verdict-box" style="background: rgb(234, 243, 222); border-color: rgba(39, 80, 10, 0.333);"><div class="verdict-header"><div class="verdict-icon" style="background:#27500A22;color:#27500A">✓</div><div><div class="verdict-title" style="color:#27500A">DA — investiție justificată · Strong buy</div><div class="verdict-subtitle">Supracostul valutar (€23.514 · 124.622 RON) este recuperat din apreciere în doar 6 luni.</div></div></div><ul class="verdict-points"><li><span class="vp-dot" style="background:#27500A"></span>Câștigul An 1 (€49.840 · 264.152 RON) depășește supracostul total de 6 ori.</li><li><span class="vp-dot" style="background:#27500A"></span>Prețul de achiziție în EUR este fix — inflația imobiliară lucrează în favoarea investitorului indiferent de curs.</li><li><span class="vp-dot" style="background:#27500A"></span>ROI net An 1 după supracost valutar: +4.2% · ROI net An 3: +22.2% în EUR.</li></ul>
-    <div style="margin-top:14px;border-top:0.5px solid #27500A33;padding-top:12px">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#27500A;margin-bottom:8px">Bilanț net · Net balance — breakeven în <strong>6 luni</strong></div>
-      <table style="width:100%;border-collapse:collapse;font-size:12px">
-        <thead><tr>
-          <th style="text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">Element</th>
-          <th style="text-align:right;font-size:11px;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">EUR</th>
-          <th style="text-align:right;font-size:11px;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">RON</th>
-        </tr></thead>
-        <tbody>
-          <tr>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Supracost curs valutar total</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#A32D2D">- €23.514</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#A32D2D">- 124.622 RON</td>
-          </tr>
-          <tr>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Câștig apreciere An 1</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ €49.840</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ 264.152 RON</td>
-          </tr>
-          <tr>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Câștig apreciere An 3</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ €161.801</td>
-            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ 857.543 RON</td>
-          </tr>
-          <tr style="background:#27500A11">
-            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 1</td>
-            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;text-align:right;font-weight:500;color:#27500A">+ €26.326</td>
-            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;text-align:right;font-weight:500;color:#27500A">+ 139.530 RON</td>
-          </tr>
-          <tr style="background:#27500A11">
-            <td style="padding:7px 8px;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 3</td>
-            <td style="padding:7px 8px;text-align:right;font-weight:500;color:#27500A">+ €138.287</td>
-            <td style="padding:7px 8px;text-align:right;font-weight:500;color:#27500A">+ 732.921 RON</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <div class="verdict-box" id="verdict-box"></div>
 </div>
 
 <div class="footer">Generat cu date din lista de prețuri · Toate valorile sunt estimative și nu constituie consultanță financiară.</div>
