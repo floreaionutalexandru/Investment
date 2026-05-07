@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)file:///Users/ionutalexandruflorea/Downloads/portofoliu_investitie_10.html -->
+<html lang="ro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofoliu Investiție — 7 Apartamente</title>
+<script src="./index_files/chart.umd.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg-s:#f5f5f3;--bg-t:#efefec;
+  --text:#1a1a18;--text-s:#6b6b67;--text-t:#9b9b96;
+  --border:rgba(0,0,0,0.1);--border-md:rgba(0,0,0,0.18);
+  --radius-md:8px;--radius-lg:12px;
+  --font:-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#1c1c1a;--bg-s:#252523;--bg-t:#2e2e2b;--text:#f0f0ec;--text-s:#a0a09b;--text-t:#6b6b67;--border:rgba(255,255,255,0.1);--border-md:rgba(255,255,255,0.18)}
+}
+body{font-family:var(--font);background:var(--bg-t);color:var(--text);min-height:100vh;padding:2rem 1rem}
+.container{max-width:880px;margin:0 auto}
+.header{margin-bottom:2rem}
+.header h1{font-size:22px;font-weight:500;margin-bottom:4px}
+.header p{font-size:13px;color:var(--text-s)}
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-t);margin-bottom:10px}
+.slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:600px){.slider-grid{grid-template-columns:1fr}}
+.slider-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.slider-row input[type=range]{flex:1;accent-color:#185FA5;cursor:pointer}
+.slider-val{font-size:15px;font-weight:500;min-width:52px;text-align:right}
+.rh{font-size:11px;color:var(--text-t)}
+.pill{display:inline-block;font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
+.pill-green{background:#EAF3DE;color:#27500A}
+.pill-amber{background:#FAEEDA;color:#633806}
+.pill-red{background:#FCEBEB;color:#791F1F}
+.pill-blue{background:#E6F1FB;color:#0C447C}
+.ref-note{font-size:11px;color:var(--text-t);margin-top:5px}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.metric{background:var(--bg-s);border-radius:var(--radius-md);padding:12px 14px}
+.metric-label{font-size:11px;color:var(--text-s);margin-bottom:3px}
+.metric-value{font-size:17px;font-weight:500}
+.metric-sub{font-size:11px;color:var(--text-t);margin-top:2px}
+.metric-delta{font-size:11px;margin-top:2px;font-weight:500}
+.delta-bad{color:#A32D2D}.delta-ok{color:#3B6D11}
+.forecast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:500px){.forecast-grid{grid-template-columns:1fr}}
+.fc-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:14px;cursor:pointer;transition:border-color .15s}
+.fc-card:hover{border-color:rgba(24,95,165,0.4)}
+.fc-card.active{border:2px solid #185FA5}
+.fc-title{font-size:12px;font-weight:500;color:var(--text-s);margin-bottom:8px}
+.fc-val{font-size:20px;font-weight:500}
+.fc-sub{font-size:11px;color:var(--text-t);margin-top:3px}
+.fc-gain{font-size:13px;font-weight:500;margin-top:6px;color:#3B6D11}
+.fc-hint{font-size:11px;color:var(--text-t);margin-top:6px}
+.breakdown-panel{margin-top:1rem;border-top:0.5px solid var(--border);padding-top:1rem;display:none}
+.breakdown-panel.open{display:block}
+.bd-title{font-size:13px;font-weight:500;margin-bottom:10px}
+.bd-table{width:100%;border-collapse:collapse;font-size:12px}
+.bd-table th{text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--text-t);padding:5px 8px;border-bottom:0.5px solid var(--border)}
+.bd-table td{padding:7px 8px;border-bottom:0.5px solid var(--border);color:var(--text)}
+.bd-table tr:last-child td{border-bottom:none}
+.bd-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.bd-table .total-row td{font-weight:500;background:var(--bg-s)}
+.chart-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-s)}
+.legend-dot{width:10px;height:10px;border-radius:2px;display:inline-block}
+.cost-table{width:100%;border-collapse:collapse;font-size:13px}
+.cost-table th{text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text-t);padding:6px 8px;border-bottom:0.5px solid var(--border)}
+.cost-table td{padding:8px;border-bottom:0.5px solid var(--border);color:var(--text)}
+.cost-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.cost-table .total-row td{font-weight:500;background:var(--bg-s)}
+.verdict-box{border-radius:var(--radius-lg);border:0.5px solid var(--border);padding:16px 20px}
+.verdict-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.verdict-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;flex-shrink:0}
+.verdict-title{font-size:15px;font-weight:500}
+.verdict-subtitle{font-size:12px;color:var(--text-s);margin-top:1px}
+.verdict-points{list-style:none;margin-top:8px}
+.verdict-points li{padding:4px 0;display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--text-s);line-height:1.5}
+.vp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.apt-table{width:100%;border-collapse:collapse;font-size:13px}
+.apt-table th{text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text-t);padding:6px 8px;border-bottom:0.5px solid var(--border)}
+.apt-table td{padding:8px;border-bottom:0.5px solid var(--border);color:var(--text)}
+.apt-table tr:last-child td{border-bottom:none}
+.apt-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.apt-table .total-row td{font-weight:500;background:var(--bg-s)}
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:500}
+.badge-s{background:#E6F1FB;color:#0C447C}
+.badge-d{background:#EEEDFE;color:#3C3489}
+
+.fx-editor{margin-top:10px}
+.fx-year-block{margin-bottom:14px}
+.fx-year-title{font-size:12px;font-weight:500;color:var(--text-s);margin-bottom:8px;padding-bottom:5px;border-bottom:0.5px solid var(--border)}
+.fx-quarters{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:500px){.fx-quarters{grid-template-columns:repeat(2,1fr)}}
+.fx-q{display:flex;flex-direction:column;gap:4px}
+.fx-q label{font-size:11px;color:var(--text-t)}
+.fx-q-row{display:flex;align-items:center;gap:6px}
+.fx-q input[type=range]{flex:1;accent-color:#185FA5;cursor:pointer}
+.fx-q-val{font-size:12px;font-weight:500;min-width:30px;text-align:right;color:var(--text)}
+.fx-reset{font-size:12px;padding:5px 12px;border:0.5px solid var(--border-md);border-radius:var(--radius-md);background:transparent;color:var(--text-s);cursor:pointer;margin-top:4px}
+.fx-reset:hover{background:var(--bg-s)}
+.footer{text-align:center;font-size:11px;color:var(--text-t);margin-top:2rem;padding-top:1rem;border-top:0.5px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>Portofoliu investiție — 7 apartamente</h1>
+  <p>Analiză financiară interactivă · Curs valutar &amp; apreciere imobiliară · București</p>
+</div>
+
+<div class="card">
+  <div class="slider-grid">
+    <div>
+      <p class="section-label">Curs la data semnării · Rate at signing</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+        <input type="number" id="fx" min="4.0" max="7.0" step="0.01" value="5.30" style="width:90px;font-size:18px;font-weight:500;padding:6px 10px;border:0.5px solid var(--border-md);border-radius:var(--radius-md);background:var(--bg);color:var(--text);text-align:center">
+        <span style="font-size:13px;color:var(--text-s)">RON / EUR</span>
+      </div>
+      <span class="pill pill-amber" id="fx-pill">Depreciere ușoară · Mild depreciation</span>
+      <p class="ref-note">Referință stabilă: 5.10 · Se aplică avansului și sincronizează Q1 An1</p>
+    </div>
+    <div>
+      <p class="section-label">Apreciere anuală (EUR) · Annual appreciation</p>
+      <div class="slider-row">
+        <span class="rh">3%</span>
+        <input type="range" id="appr" min="3" max="15" step="1" value="8">
+        <span class="rh">15%</span>
+        <span class="slider-val" id="appr-val">8%</span>
+      </div>
+      <span class="pill pill-green" id="appr-pill">Moderat · Base case București</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <p class="section-label">Sumar portofoliu · Portfolio summary</p>
+  <div class="metrics-grid" id="metrics">
+    <div class="metric"><div class="metric-label">Preț total portofoliu</div><div class="metric-value">€623.000</div><div class="metric-sub">7 apartamente · fix în EUR</div></div>
+    <div class="metric"><div class="metric-label">Avans (30%) · la 5.30</div><div class="metric-value">€186.900</div><div class="metric-sub">990.570 RON<div class="metric-delta delta-bad">+37.380 RON vs. 5.10</div></div></div>
+    <div class="metric">
+      <div class="metric-label">Rată lunară · An 1 <span style="font-size:10px;color:var(--text-t)">(avg 5.30)</span></div>
+      <div class="metric-value">€12.117</div>
+      <div class="metric-sub">64.220 RON</div>
+      <div class="metric-delta delta-bad">+2.423 RON/lună vs. 5.10</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Rată lunară · An 2 <span style="font-size:10px;color:var(--text-t)">(avg 5.30)</span></div>
+      <div class="metric-value">€12.117</div>
+      <div class="metric-sub">64.220 RON</div>
+      <div class="metric-delta delta-bad">+2.423 RON/lună vs. 5.10</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Rată lunară · An 3 <span style="font-size:10px;color:var(--text-t)">(avg 5.30)</span></div>
+      <div class="metric-value">€12.117</div>
+      <div class="metric-sub">64.220 RON</div>
+      <div class="metric-delta delta-bad">+2.423 RON/lună vs. 5.10</div>
+    </div>
+    <div class="metric"><div class="metric-label">Total plătit în 3 ani (real)</div><div class="metric-value">€623.112</div><div class="metric-sub">3.302.494 RON<div class="metric-delta delta-bad">+124.622 RON vs. ref. 5.10<br><span style="font-size:10px;color:var(--text-t)">avans NaN RON · rate +87.242 RON</span></div></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <p class="section-label">Prognoză valoare · Value forecast — apasă un an pentru detalii</p>
+  <div class="forecast-grid" id="fc-grid">
+    <div class="fc-card" data-yr="1"><div class="fc-title">Anul 1 · Year 1</div><div class="fc-val">€672.840</div><div class="fc-sub">3.566.052 RON</div><div class="fc-gain">+€49.840 · +8.0%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+    <div class="fc-card" data-yr="2"><div class="fc-title">Anul 2 · Year 2</div><div class="fc-val">€726.667</div><div class="fc-sub">3.851.336 RON</div><div class="fc-gain">+€103.667 · +16.6%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+    <div class="fc-card" data-yr="3"><div class="fc-title">Anul 3 · Year 3</div><div class="fc-val">€784.801</div><div class="fc-sub">4.159.443 RON</div><div class="fc-gain">+€161.801 · +26.0%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+  </div>
+  <div class="breakdown-panel" id="breakdown-panel">
+    <div class="bd-title" id="bd-title"></div>
+    <table class="bd-table" id="bd-table"></table>
+  </div>
+</div>
+
+<div class="card">
+  <p class="section-label">Evoluție valoare portofoliu · Portfolio value over time</p>
+  <div class="chart-legend" id="legend-port">
+    <span class="legend-item"><span class="legend-dot" style="background:#B5D4F4"></span>Conservator 5%</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#185FA5"></span>Curent (8%)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span>Optimist 12%</span>
+  </div>
+  <div style="position:relative;width:100%;height:240px">
+    <canvas id="chart-port" role="img" aria-label="Grafic evolutie valoare portofoliu pe 3 ani" width="1662" height="480" style="display: block; box-sizing: border-box; height: 240px; width: 831px;">Valoare portofoliu pe 3 ani.</canvas>
+  </div>
+</div>
+
+<div class="card">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+    <p class="section-label" style="margin-bottom:0">Evoluție curs EUR/RON · BNR istoric + proiecția ta</p>
+    <button class="fx-reset" id="fx-reset-btn">Resetează proiecția</button>
+  </div>
+  <div class="chart-legend" id="legend-fx">
+    <span class="legend-item"><span class="legend-dot" style="background:#888780"></span>Istoric BNR (trimestrial)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#185FA5"></span>Proiecția ta</span>
+  </div>
+  <div style="position:relative;width:100%;height:260px">
+    <canvas id="chart-fx" role="img" aria-label="Grafic curs EUR/RON istoric si proiectie trimestriala" width="1662" height="520" style="display: block; box-sizing: border-box; height: 260px; width: 831px;">Curs EUR/RON 2022–2028.</canvas>
+  </div>
+  <div class="fx-editor" id="fx-editor"><div class="fx-year-block">
+      <div class="fx-year-title">Proiecție An 1 · Year 1</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 10px;background:var(--bg-s);border-radius:var(--radius-md);border:0.5px solid var(--border)">
+        <span style="font-size:12px;font-weight:500;color:var(--text-s);white-space:nowrap">Medie An 1</span>
+        <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-yr="1" id="avg-slider-1" class="avg-slider" style="flex:1;accent-color:#185FA5;cursor:pointer">
+        <span style="font-size:13px;font-weight:500;color:var(--text);min-width:36px;text-align:right" id="avg-yr-1">5.30</span>
+      </div>
+      <div class="fx-quarters"><div class="fx-q">
+        <label>Q1</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="0" class="proj-slider">
+          <span class="fx-q-val" id="pv-0">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q2</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="1" class="proj-slider">
+          <span class="fx-q-val" id="pv-1">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q3</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="2" class="proj-slider">
+          <span class="fx-q-val" id="pv-2">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q4</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="3" class="proj-slider">
+          <span class="fx-q-val" id="pv-3">5.30</span>
+        </div>
+      </div></div></div><div class="fx-year-block">
+      <div class="fx-year-title">Proiecție An 2 · Year 2</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 10px;background:var(--bg-s);border-radius:var(--radius-md);border:0.5px solid var(--border)">
+        <span style="font-size:12px;font-weight:500;color:var(--text-s);white-space:nowrap">Medie An 2</span>
+        <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-yr="2" id="avg-slider-2" class="avg-slider" style="flex:1;accent-color:#185FA5;cursor:pointer">
+        <span style="font-size:13px;font-weight:500;color:var(--text);min-width:36px;text-align:right" id="avg-yr-2">5.30</span>
+      </div>
+      <div class="fx-quarters"><div class="fx-q">
+        <label>Q1</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="4" class="proj-slider">
+          <span class="fx-q-val" id="pv-4">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q2</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="5" class="proj-slider">
+          <span class="fx-q-val" id="pv-5">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q3</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="6" class="proj-slider">
+          <span class="fx-q-val" id="pv-6">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q4</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="7" class="proj-slider">
+          <span class="fx-q-val" id="pv-7">5.30</span>
+        </div>
+      </div></div></div><div class="fx-year-block">
+      <div class="fx-year-title">Proiecție An 3 · Year 3</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 10px;background:var(--bg-s);border-radius:var(--radius-md);border:0.5px solid var(--border)">
+        <span style="font-size:12px;font-weight:500;color:var(--text-s);white-space:nowrap">Medie An 3</span>
+        <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-yr="3" id="avg-slider-3" class="avg-slider" style="flex:1;accent-color:#185FA5;cursor:pointer">
+        <span style="font-size:13px;font-weight:500;color:var(--text);min-width:36px;text-align:right" id="avg-yr-3">5.30</span>
+      </div>
+      <div class="fx-quarters"><div class="fx-q">
+        <label>Q1</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="8" class="proj-slider">
+          <span class="fx-q-val" id="pv-8">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q2</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="9" class="proj-slider">
+          <span class="fx-q-val" id="pv-9">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q3</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="10" class="proj-slider">
+          <span class="fx-q-val" id="pv-10">5.30</span>
+        </div>
+      </div><div class="fx-q">
+        <label>Q4</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="5.30" data-idx="11" class="proj-slider">
+          <span class="fx-q-val" id="pv-11">5.30</span>
+        </div>
+      </div></div></div></div>
+</div>
+
+<div class="card">
+  <p class="section-label">Cost suplimentar curs · Exchange rate premium vs. baseline 5.10</p>
+  <table class="cost-table" id="cost-table">
+    <thead><tr>
+      <th>Element</th>
+      <th class="num">La 5.10 (ref.) RON</th>
+      <th class="num">Proiecție RON</th>
+      <th class="num">Diferență EUR</th>
+      <th class="num">Diferență RON</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Avans (la semnare 5.30)</td><td class="num">953.190 RON</td><td class="num">990.570 RON</td><td class="num" style="color:#A32D2D">+€7.053</td><td class="num" style="color:#A32D2D">+37.380 RON</td></tr>
+      <tr><td>Rate An 1 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
+      <tr><td>Rate An 2 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
+      <tr><td>Rate An 3 · avg 5.30</td><td class="num">741.560 RON</td><td class="num">770.641 RON</td><td class="num" style="color:#A32D2D">+€5.487</td><td class="num" style="color:#A32D2D">+29.081 RON</td></tr>
+      <tr class="total-row"><td>Total supracost</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:#A32D2D">+€23.514</td><td class="num" style="color:#A32D2D">+124.622 RON</td></tr>
+      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 1</td><td class="num" colspan="2">—</td><td class="num">+€49.840</td><td class="num">+264.152 RON</td></tr>
+      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 3</td><td class="num" colspan="2">—</td><td class="num">+€161.801</td><td class="num">+857.543 RON</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <p class="section-label">Detalii apartamente · Apartment breakdown</p>
+  <div style="overflow-x:auto">
+    <table class="apt-table" id="apt-table"><thead><tr><th>Ap.</th><th>Tip</th><th>Etaj</th><th class="num">Preț (EUR)</th><th class="num">Avans (EUR)</th><th class="num">Avans (RON)</th><th class="num">Rată/lună (EUR)</th><th class="num">Rată/lună (RON)</th></tr></thead><tbody><tr><td><strong>Ap. 107</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 108</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 110</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 116</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 118</strong></td><td><span class="badge badge-s">Studio 1A</span></td><td>Et. 7</td><td class="num">€71.000</td><td class="num">€21.300</td><td class="num">112.890 RON</td><td class="num">€1.381</td><td class="num">7.319 RON</td></tr><tr><td><strong>Ap. 70</strong></td><td><span class="badge badge-d">Dublu 2C</span></td><td>Et. 4</td><td class="num">€134.000</td><td class="num">€40.200</td><td class="num">213.060 RON</td><td class="num">€2.606</td><td class="num">13.812 RON</td></tr><tr><td><strong>Ap. 96</strong></td><td><span class="badge badge-d">Dublu 2C</span></td><td>Et. 6</td><td class="num">€134.000</td><td class="num">€40.200</td><td class="num">213.060 RON</td><td class="num">€2.606</td><td class="num">13.812 RON</td></tr><tr class="total-row"><td colspan="3">Total</td><td class="num">€623.000</td><td class="num">€186.900</td><td class="num">990.570 RON</td><td class="num">€12.117</td><td class="num">64.220 RON</td></tr></tbody></table>
+  </div>
+</div>
+
+<div class="card">
+  <p class="section-label">Verdict investiție · Investment verdict</p>
+  <div class="verdict-box" id="verdict-box" style="background: rgb(234, 243, 222); border-color: rgba(39, 80, 10, 0.333);"><div class="verdict-header"><div class="verdict-icon" style="background:#27500A22;color:#27500A">✓</div><div><div class="verdict-title" style="color:#27500A">DA — investiție justificată · Strong buy</div><div class="verdict-subtitle">Supracostul valutar (€23.514 · 124.622 RON) este recuperat din apreciere în doar 6 luni.</div></div></div><ul class="verdict-points"><li><span class="vp-dot" style="background:#27500A"></span>Câștigul An 1 (€49.840 · 264.152 RON) depășește supracostul total de 6 ori.</li><li><span class="vp-dot" style="background:#27500A"></span>Prețul de achiziție în EUR este fix — inflația imobiliară lucrează în favoarea investitorului indiferent de curs.</li><li><span class="vp-dot" style="background:#27500A"></span>ROI net An 1 după supracost valutar: +4.2% · ROI net An 3: +22.2% în EUR.</li></ul>
+    <div style="margin-top:14px;border-top:0.5px solid #27500A33;padding-top:12px">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#27500A;margin-bottom:8px">Bilanț net · Net balance — breakeven în <strong>6 luni</strong></div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead><tr>
+          <th style="text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">Element</th>
+          <th style="text-align:right;font-size:11px;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">EUR</th>
+          <th style="text-align:right;font-size:11px;color:#27500A88;padding:4px 8px 6px;border-bottom:0.5px solid #27500A33">RON</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Supracost curs valutar total</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#A32D2D">- €23.514</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#A32D2D">- 124.622 RON</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Câștig apreciere An 1</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ €49.840</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ 264.152 RON</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;color:var(--text-s)">Câștig apreciere An 3</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ €161.801</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid #27500A22;text-align:right;font-weight:500;color:#27500A">+ 857.543 RON</td>
+          </tr>
+          <tr style="background:#27500A11">
+            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 1</td>
+            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;text-align:right;font-weight:500;color:#27500A">+ €26.326</td>
+            <td style="padding:7px 8px;border-bottom:0.5px solid #27500A33;text-align:right;font-weight:500;color:#27500A">+ 139.530 RON</td>
+          </tr>
+          <tr style="background:#27500A11">
+            <td style="padding:7px 8px;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 3</td>
+            <td style="padding:7px 8px;text-align:right;font-weight:500;color:#27500A">+ €138.287</td>
+            <td style="padding:7px 8px;text-align:right;font-weight:500;color:#27500A">+ 732.921 RON</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Generat cu date din lista de prețuri · Toate valorile sunt estimative și nu constituie consultanță financiară.</div>
+</div>
+
+<script>
+const APTS=[
+  {id:'107',type:'1A',floor:7,price:71000,rate:1381},
+  {id:'108',type:'1A',floor:7,price:71000,rate:1381},
+  {id:'110',type:'1A',floor:7,price:71000,rate:1381},
+  {id:'116',type:'1A',floor:7,price:71000,rate:1381},
+  {id:'118',type:'1A',floor:7,price:71000,rate:1381},
+  {id:'70', type:'2C',floor:4,price:134000,rate:2606},
+  {id:'96', type:'2C',floor:6,price:134000,rate:2606},
+];
+const TOTAL_EUR=APTS.reduce((s,a)=>s+a.price,0);
+const TOTAL_RATE_EUR=APTS.reduce((s,a)=>s+a.rate,0);
+const DOWN_EUR=TOTAL_EUR*0.3;
+const BASE_FX=5.10;
+const MONTHS=36;
+
+const HIST_LABELS=['Ian 2022','Apr 2022','Iul 2022','Oct 2022','Ian 2023','Apr 2023','Iul 2023','Oct 2023','Ian 2024','Apr 2024','Iul 2024','Oct 2024','Ian 2025','Apr 2025'];
+const HIST_DATA=  [4.95,      4.94,      4.93,      4.94,      4.92,      4.93,      4.95,      4.96,      4.97,      4.98,      5.00,      5.05,      5.08,      5.30];
+
+const PROJ_LABELS=['Q1 An1','Q2 An1','Q3 An1','Q4 An1','Q1 An2','Q2 An2','Q3 An2','Q4 An2','Q1 An3','Q2 An3','Q3 An3','Q4 An3'];
+const DEFAULT_PROJ=5.30;
+
+let projValues=Array(12).fill(DEFAULT_PROJ);
+let activeYear=null;
+let chartPort=null, chartFx=null;
+
+function fmt(n){return Math.round(n).toLocaleString('ro-RO')}
+function fE(n){return '€'+fmt(n)}
+function fR(n){return fmt(n)+' RON'}
+
+function fxPill(fx){
+  if(fx<=5.0) return{text:'Curs favorabil · Strong RON',cls:'pill-green'};
+  if(fx<=5.15) return{text:'Aproape de referință · Near baseline',cls:'pill-green'};
+  if(fx<=5.35) return{text:'Depreciere ușoară · Mild depreciation',cls:'pill-amber'};
+  if(fx<=5.6)  return{text:'Volatilitate ridicată · High volatility',cls:'pill-amber'};
+  return{text:'Criză valutară · Currency stress',cls:'pill-red'};
+}
+function apprPill(p){
+  if(p<=5)  return{text:'Conservator · Conservative',cls:'pill-blue'};
+  if(p<=8)  return{text:'Moderat · Base case București',cls:'pill-green'};
+  if(p<=11) return{text:'Optimist · Strong demand',cls:'pill-amber'};
+  return{text:'Agresiv · Boom imobiliar',cls:'pill-red'};
+}
+
+function avgFxForYear(yr){
+  const slice=projValues.slice((yr-1)*4,yr*4);
+  return slice.reduce((a,b)=>a+b,0)/slice.length;
+}
+
+function buildFxEditor(){
+  const el=document.getElementById('fx-editor');
+  const years=[1,2,3];
+  let html='';
+  years.forEach(yr=>{
+    const avgYr=projValues.slice((yr-1)*4,yr*4).reduce((a,b)=>a+b,0)/4;
+    html+=`<div class="fx-year-block">
+      <div class="fx-year-title">Proiecție An ${yr} · Year ${yr}</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 10px;background:var(--bg-s);border-radius:var(--radius-md);border:0.5px solid var(--border)">
+        <span style="font-size:12px;font-weight:500;color:var(--text-s);white-space:nowrap">Medie An ${yr}</span>
+        <input type="range" min="4.5" max="6.5" step="0.05" value="${avgYr.toFixed(2)}" data-yr="${yr}" id="avg-slider-${yr}" class="avg-slider" style="flex:1;accent-color:#185FA5;cursor:pointer">
+        <span style="font-size:13px;font-weight:500;color:var(--text);min-width:36px;text-align:right" id="avg-yr-${yr}">${avgYr.toFixed(2)}</span>
+      </div>
+      <div class="fx-quarters">`;
+    for(let q=0;q<4;q++){
+      const idx=(yr-1)*4+q;
+      const val=projValues[idx].toFixed(2);
+      html+=`<div class="fx-q">
+        <label>Q${q+1}</label>
+        <div class="fx-q-row">
+          <input type="range" min="4.5" max="6.5" step="0.05" value="${val}" data-idx="${idx}" class="proj-slider">
+          <span class="fx-q-val" id="pv-${idx}">${val}</span>
+        </div>
+      </div>`;
+    }
+    html+=`</div></div>`;
+  });
+  el.innerHTML=html;
+  el.querySelectorAll('.avg-slider').forEach(s=>{
+    s.addEventListener('input',function(){
+      const yr=parseInt(this.dataset.yr);
+      const val=parseFloat(this.value);
+      document.getElementById('avg-yr-'+yr).textContent=val.toFixed(2);
+      for(let q=0;q<4;q++){
+        const idx=(yr-1)*4+q;
+        projValues[idx]=val;
+        const qSlider=el.querySelector('.proj-slider[data-idx="'+idx+'"]');
+        const qVal=document.getElementById('pv-'+idx);
+        if(qSlider) qSlider.value=val.toFixed(2);
+        if(qVal) qVal.textContent=val.toFixed(2);
+      }
+      renderFxChart();
+      renderCostAndVerdict();
+    });
+  });
+
+  el.querySelectorAll('.proj-slider').forEach(s=>{
+    s.addEventListener('input',function(){
+      const idx=parseInt(this.dataset.idx);
+      projValues[idx]=parseFloat(this.value);
+      document.getElementById('pv-'+idx).textContent=parseFloat(this.value).toFixed(2);
+      const yr=Math.floor(idx/4)+1;
+      const avg=projValues.slice((yr-1)*4,yr*4).reduce((a,b)=>a+b,0)/4;
+      const avgEl=document.getElementById('avg-yr-'+yr);
+      const avgSlider=document.getElementById('avg-slider-'+yr);
+      if(avgEl) avgEl.textContent=avg.toFixed(2);
+      if(avgSlider) avgSlider.value=avg.toFixed(2);
+      renderFxChart();
+      renderCostAndVerdict();
+    });
+  });
+}
+
+function renderFxChart(){
+  const allLabels=[...HIST_LABELS,...PROJ_LABELS];
+  const histPad=Array(HIST_LABELS.length).fill(null);
+  const lastHist=HIST_DATA[HIST_DATA.length-1];
+  const projFull=[...histPad, lastHist, ...projValues.slice(1)];
+  const projWithJoin=[lastHist,...projValues];
+
+  document.getElementById('legend-fx').innerHTML=`
+    <span class="legend-item"><span class="legend-dot" style="background:#888780"></span>Istoric BNR (trimestrial)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#185FA5"></span>Proiecția ta</span>
+  `;
+
+  if(chartFx) chartFx.destroy();
+  chartFx=new Chart(document.getElementById('chart-fx'),{
+    type:'line',
+    data:{
+      labels:[...HIST_LABELS,...PROJ_LABELS],
+      datasets:[
+        {
+          label:'Istoric BNR',
+          data:[...HIST_DATA,...Array(PROJ_LABELS.length).fill(null)],
+          borderColor:'#888780',backgroundColor:'transparent',
+          borderWidth:2,pointRadius:2.5,pointBackgroundColor:'#888780'
+        },
+        {
+          label:'Proiecția ta',
+          data:[...Array(HIST_LABELS.length-1).fill(null), lastHist, ...projValues],
+          borderColor:'#185FA5',backgroundColor:'transparent',
+          borderWidth:2,pointRadius:3,pointBackgroundColor:'#185FA5',
+          borderDash:[5,3]
+        }
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{label:(c)=>c.raw!=null?c.dataset.label+': '+c.raw.toFixed(2)+' RON':null}}
+      },
+      scales:{
+        y:{min:4.5,max:6.6,ticks:{callback:(v)=>v.toFixed(2),font:{size:11}},grid:{color:'rgba(128,128,128,0.08)'}},
+        x:{ticks:{font:{size:10},maxRotation:50,autoSkip:true,maxTicksLimit:14},grid:{display:false}}
+      }
+    }
+  });
+}
+
+function renderCostAndVerdict(){
+  const fx=parseFloat(document.getElementById('fx').value)||5.30;
+  const appr=parseInt(document.getElementById('appr').value);
+  const yr1=TOTAL_EUR*Math.pow(1+appr/100,1);
+  const yr2=TOTAL_EUR*Math.pow(1+appr/100,2);
+  const yr3=TOTAL_EUR*Math.pow(1+appr/100,3);
+  const g1=yr1-TOTAL_EUR,g2=yr2-TOTAL_EUR,g3=yr3-TOTAL_EUR;
+
+  const avgFx1=avgFxForYear(1);
+  const avgFx2=avgFxForYear(2);
+  const avgFx3=avgFxForYear(3);
+  const avgFxAll=(avgFx1+avgFx2+avgFx3)/3;
+
+  const downRon=DOWN_EUR*fx;           // avans — la cursul de semnare
+  const baseDownRon=DOWN_EUR*BASE_FX;
+  const extraDown=downRon-baseDownRon;  // supracost avans
+
+  const ratesRonBase=TOTAL_RATE_EUR*BASE_FX*MONTHS;
+  const ratesRonProjTotal=TOTAL_RATE_EUR*(avgFx1*12+avgFx2*12+avgFx3*12);
+  const extraRates=ratesRonProjTotal-ratesRonBase;  // supracost rate — NU depinde de fx
+  const totalExtra=extraDown+extraRates;
+
+  const totalExtraEur=totalExtra/avgFxAll;
+  const extraDownEur=extraDown/fx;
+  const extraRates1Eur=(TOTAL_RATE_EUR*avgFx1*12 - TOTAL_RATE_EUR*BASE_FX*12)/avgFx1;
+  const extraRates2Eur=(TOTAL_RATE_EUR*avgFx2*12 - TOTAL_RATE_EUR*BASE_FX*12)/avgFx2;
+  const extraRates3Eur=(TOTAL_RATE_EUR*avgFx3*12 - TOTAL_RATE_EUR*BASE_FX*12)/avgFx3;
+
+  function diffCell(ronDiff, eurDiff){
+    const c=ronDiff>0?'#A32D2D':'#3B6D11';
+    const s=ronDiff>0?'+':'';
+    return `<td class="num" style="color:${c}">${s}${fE(Math.round(eurDiff))}</td><td class="num" style="color:${c}">${s}${fR(Math.round(ronDiff))}</td>`;
+  }
+
+  document.getElementById('cost-table').innerHTML=`
+    <thead><tr>
+      <th>Element</th>
+      <th class="num">La 5.10 (ref.) RON</th>
+      <th class="num">Proiecție RON</th>
+      <th class="num">Diferență EUR</th>
+      <th class="num">Diferență RON</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Avans (la semnare ${fx.toFixed(2)})</td><td class="num">${fR(baseDownRon)}</td><td class="num">${fR(downRon)}</td>${diffCell(extraDown, extraDownEur)}</tr>
+      <tr><td>Rate An 1 · avg ${avgFx1.toFixed(2)}</td><td class="num">${fR(TOTAL_RATE_EUR*BASE_FX*12)}</td><td class="num">${fR(TOTAL_RATE_EUR*avgFx1*12)}</td>${diffCell((avgFx1-BASE_FX)*TOTAL_RATE_EUR*12, extraRates1Eur)}</tr>
+      <tr><td>Rate An 2 · avg ${avgFx2.toFixed(2)}</td><td class="num">${fR(TOTAL_RATE_EUR*BASE_FX*12)}</td><td class="num">${fR(TOTAL_RATE_EUR*avgFx2*12)}</td>${diffCell((avgFx2-BASE_FX)*TOTAL_RATE_EUR*12, extraRates2Eur)}</tr>
+      <tr><td>Rate An 3 · avg ${avgFx3.toFixed(2)}</td><td class="num">${fR(TOTAL_RATE_EUR*BASE_FX*12)}</td><td class="num">${fR(TOTAL_RATE_EUR*avgFx3*12)}</td>${diffCell((avgFx3-BASE_FX)*TOTAL_RATE_EUR*12, extraRates3Eur)}</tr>
+      <tr class="total-row"><td>Total supracost</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:${totalExtra>0?'#A32D2D':'#3B6D11'}">${totalExtra>0?'+':''}${fE(Math.round(totalExtraEur))}</td><td class="num" style="color:${totalExtra>0?'#A32D2D':'#3B6D11'}">${totalExtra>0?'+':''}${fR(Math.round(totalExtra))}</td></tr>
+      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 1</td><td class="num" colspan="2">—</td><td class="num">+${fE(Math.round(g1))}</td><td class="num">+${fR(Math.round(g1*avgFx1))}</td></tr>
+      <tr style="color:#3B6D11;font-weight:500"><td>Câștig apreciere An 3</td><td class="num" colspan="2">—</td><td class="num">+${fE(Math.round(g3))}</td><td class="num">+${fR(Math.round(g3*avgFx3))}</td></tr>
+    </tbody>
+  `;
+
+  const breakEvenMonths=Math.ceil(totalExtra/(g1*avgFx1/12));
+  const netROI3yr=((g3-totalExtra/avgFx3)/TOTAL_EUR*100).toFixed(1);
+  const netROI1yr=((g1-totalExtra/avgFx1)/TOTAL_EUR*100).toFixed(1);
+  let vColor,vBg,vIcon,vTitle,vSub,vPoints;
+
+  // verdict based on breakeven months, not exchange rate value
+  if(breakEvenMonths<=6){
+    vColor='#27500A';vBg='#EAF3DE';vIcon='✓';
+    vTitle='DA — investiție justificată · Strong buy';
+    vSub=`Supracostul valutar (${fE(Math.round(totalExtraEur))} · ${fR(Math.round(totalExtra))}) este recuperat din apreciere în doar ${breakEvenMonths} luni.`;
+    vPoints=[
+      `Câștigul An 1 (${fE(Math.round(g1))} · ${fR(Math.round(g1*avgFx1))}) depășește supracostul total de ${Math.round(breakEvenMonths)} ori.`,
+      'Prețul de achiziție în EUR este fix — inflația imobiliară lucrează în favoarea investitorului indiferent de curs.',
+      `ROI net An 1 după supracost valutar: +${netROI1yr}% · ROI net An 3: +${netROI3yr}% în EUR.`
+    ];
+  } else if(breakEvenMonths<=18){
+    vColor='#633806';vBg='#FAEEDA';vIcon='~';
+    vTitle='FAVORABIL — breakeven rapid · Cautiously positive';
+    vSub=`Supracostul (${fE(Math.round(totalExtraEur))} · ${fR(Math.round(totalExtra))}) este absorbit de apreciere în ~${breakEvenMonths} luni.`;
+    vPoints=[
+      `La ${appr}% apreciere/an, câștigul An 1 (${fE(Math.round(g1))}) depășește supracostul total al cursului.`,
+      'Prețul rămâne fix în EUR — orice stabilizare a RON crește câștigul net suplimentar.',
+      `ROI net An 3 după supracost valutar: +${netROI3yr}% în EUR — superior oricărui instrument bancar.`
+    ];
+  } else if(breakEvenMonths<=36){
+    vColor='#854F0B';vBg='#FAEEDA';vIcon='!';
+    vTitle='ATENȚIE — breakeven în interiorul contractului';
+    vSub=`Supracostul (${fE(Math.round(totalExtraEur))} · ${fR(Math.round(totalExtra))}) e recuperat în ~${breakEvenMonths} luni — înainte de finalul ratelor.`;
+    vPoints=[
+      `Aprecierea acoperă supracostul în luna ${breakEvenMonths} din 36 — investiția rămâne profitabilă.`,
+      `Dacă aprecierea scade sub ${Math.ceil(totalExtra/avgFxAll/TOTAL_EUR*100/3)}%/an, breakeven-ul se prelungește.`,
+      'Recomandare: negociați un avans mai mic pentru a reduce expunerea la cursul de semnare.'
+    ];
+  } else {
+    vColor='#791F1F';vBg='#FCEBEB';vIcon='✗';
+    vTitle='RISC RIDICAT — breakeven după finalizarea ratelor';
+    vSub=`La proiecția actuală, supracostul valutar (${fE(Math.round(totalExtraEur))}) e recuperat abia după luna ${breakEvenMonths}.`;
+    vPoints=[
+      `Supracostul total: ${fE(Math.round(totalExtraEur))} · ${fR(Math.round(totalExtra))}. Câștig An 1: ${fE(Math.round(g1))}.`,
+      `Aprecierea ar trebui să fie peste ${Math.ceil(totalExtra/avgFxAll/TOTAL_EUR*100/3)}%/an pentru a justifica investiția la cursul actual.`,
+      'Recomandare: așteptați stabilizarea cursului sau renegociați condițiile contractului.'
+    ];
+  }
+  const netY1=g1 - totalExtraEur;
+  const netY3=g3 - totalExtraEur;
+  const netY1Ron=g1*avgFx1 - totalExtra;
+  const netY3Ron=g3*avgFx3 - totalExtra;
+  const netY1Color=netY1>=0?'#27500A':'#A32D2D';
+  const netY3Color=netY3>=0?'#27500A':'#A32D2D';
+
+  const miniTable=`
+    <div style="margin-top:14px;border-top:0.5px solid ${vColor}33;padding-top:12px">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:${vColor};margin-bottom:8px">Bilanț net · Net balance — breakeven în <strong>${breakEvenMonths} luni</strong></div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead><tr>
+          <th style="text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:${vColor}88;padding:4px 8px 6px;border-bottom:0.5px solid ${vColor}33">Element</th>
+          <th style="text-align:right;font-size:11px;color:${vColor}88;padding:4px 8px 6px;border-bottom:0.5px solid ${vColor}33">EUR</th>
+          <th style="text-align:right;font-size:11px;color:${vColor}88;padding:4px 8px 6px;border-bottom:0.5px solid ${vColor}33">RON</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;color:var(--text-s)">Supracost curs valutar total</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#A32D2D">- ${fE(Math.round(totalExtraEur))}</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#A32D2D">- ${fR(Math.round(totalExtra))}</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;color:var(--text-s)">Câștig apreciere An 1</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#27500A">+ ${fE(Math.round(g1))}</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#27500A">+ ${fR(Math.round(g1*avgFx1))}</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;color:var(--text-s)">Câștig apreciere An 3</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#27500A">+ ${fE(Math.round(g3))}</td>
+            <td style="padding:6px 8px;border-bottom:0.5px solid ${vColor}22;text-align:right;font-weight:500;color:#27500A">+ ${fR(Math.round(g3*avgFx3))}</td>
+          </tr>
+          <tr style="background:${vColor}11">
+            <td style="padding:7px 8px;border-bottom:0.5px solid ${vColor}33;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 1</td>
+            <td style="padding:7px 8px;border-bottom:0.5px solid ${vColor}33;text-align:right;font-weight:500;color:${netY1Color}">${netY1>=0?'+ ':'- '}${fE(Math.abs(Math.round(netY1)))}</td>
+            <td style="padding:7px 8px;border-bottom:0.5px solid ${vColor}33;text-align:right;font-weight:500;color:${netY1Color}">${netY1Ron>=0?'+ ':'- '}${fR(Math.abs(Math.round(netY1Ron)))}</td>
+          </tr>
+          <tr style="background:${vColor}11">
+            <td style="padding:7px 8px;font-weight:500;color:var(--text)">Avantaj net vs. supracost — An 3</td>
+            <td style="padding:7px 8px;text-align:right;font-weight:500;color:${netY3Color}">${netY3>=0?'+ ':'- '}${fE(Math.abs(Math.round(netY3)))}</td>
+            <td style="padding:7px 8px;text-align:right;font-weight:500;color:${netY3Color}">${netY3Ron>=0?'+ ':'- '}${fR(Math.abs(Math.round(netY3Ron)))}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  const vb=document.getElementById('verdict-box');
+  vb.style.background=vBg;vb.style.borderColor=vColor+'55';
+  vb.innerHTML=`<div class="verdict-header"><div class="verdict-icon" style="background:${vColor}22;color:${vColor}">${vIcon}</div><div><div class="verdict-title" style="color:${vColor}">${vTitle}</div><div class="verdict-subtitle">${vSub}</div></div></div><ul class="verdict-points">${vPoints.map(p=>`<li><span class="vp-dot" style="background:${vColor}"></span>${p}</li>`).join('')}</ul>${miniTable}`;
+}
+
+function buildBreakdown(yr,appr,fx){
+  const panel=document.getElementById('breakdown-panel');
+  if(activeYear===yr){
+    activeYear=null;panel.classList.remove('open');
+    document.querySelectorAll('.fc-card').forEach(c=>c.classList.remove('active'));
+    return;
+  }
+  activeYear=yr;
+  document.querySelectorAll('.fc-card').forEach((c,i)=>c.classList.toggle('active',i===yr-1));
+  const mult=Math.pow(1+parseInt(document.getElementById('appr').value)/100,yr);
+  const avgFxYr=avgFxForYear(yr);
+
+  document.getElementById('bd-title').textContent=`Breakdown per apartament — Anul ${yr} · apreciere cumulată +${((mult-1)*100).toFixed(1)}% · curs mediu proiectat ${avgFxYr.toFixed(2)} RON/EUR`;
+
+  let rows='';let totV=0,totG=0,totRateRef=0,totRatePrj=0,totExtra=0;
+  APTS.forEach(a=>{
+    const v=a.price*mult, g=v-a.price;
+    const rateRonRef=a.rate*BASE_FX;
+    const rateRonPrj=a.rate*avgFxYr;
+    const rateExtra=rateRonPrj-rateRonRef;
+    const extraColor=rateExtra>0?'#A32D2D':'#3B6D11';
+    const extraSign=rateExtra>0?'+':'';
+    totV+=v;totG+=g;totRateRef+=rateRonRef;totRatePrj+=rateRonPrj;totExtra+=rateExtra;
+    rows+=`<tr>
+      <td><strong>Ap. ${a.id}</strong></td>
+      <td><span class="badge ${a.type==='1A'?'badge-s':'badge-d'}">${a.type==='1A'?'Studio':'Dublu'} ${a.type}</span></td>
+      <td>Et. ${a.floor}</td>
+      <td class="num">${fE(a.price)}</td>
+      <td class="num">${fE(Math.round(v))}</td>
+      <td class="num" style="color:#3B6D11;font-weight:500">+${fE(Math.round(g))}</td>
+      <td class="num">${fE(a.rate)}</td>
+      <td class="num">${fR(Math.round(rateRonRef))}</td>
+      <td class="num">${fR(Math.round(rateRonPrj))}</td>
+      <td class="num" style="color:${extraColor};font-weight:500">${extraSign}${fR(Math.round(rateExtra))}</td>
+    </tr>`;
+  });
+  const totExtraColor=totExtra>0?'#A32D2D':'#3B6D11';
+  const totExtraSign=totExtra>0?'+':'';
+  rows+=`<tr class="total-row">
+    <td colspan="3">Total</td>
+    <td class="num">${fE(TOTAL_EUR)}</td>
+    <td class="num">${fE(Math.round(totV))}</td>
+    <td class="num" style="color:#3B6D11">+${fE(Math.round(totG))}</td>
+    <td class="num">${fE(TOTAL_RATE_EUR)}</td>
+    <td class="num">${fR(Math.round(totRateRef))}</td>
+    <td class="num">${fR(Math.round(totRatePrj))}</td>
+    <td class="num" style="color:${totExtraColor};font-weight:500">${totExtraSign}${fR(Math.round(totExtra))}</td>
+  </tr>`;
+
+  document.getElementById('bd-table').innerHTML=`<thead><tr>
+    <th>Ap.</th><th>Tip</th><th>Etaj</th>
+    <th class="num">Preț acum</th>
+    <th class="num">Valoare an ${yr}</th>
+    <th class="num">Câștig EUR</th>
+    <th class="num">Rată/lună EUR</th>
+    <th class="num">Rată RON la 5.10</th>
+    <th class="num">Rată RON la ${avgFxYr.toFixed(2)}</th>
+    <th class="num">Suprapreț/lună</th>
+  </tr></thead><tbody>${rows}</tbody>`;
+  panel.classList.add('open');
+}
+
+function render(){
+  const fx=parseFloat(document.getElementById('fx').value)||5.30;
+  const appr=parseInt(document.getElementById('appr').value);
+  document.getElementById('appr-val').textContent=appr+'%';
+
+  const fp=fxPill(fx),el=document.getElementById('fx-pill');
+  el.textContent=fp.text;el.className='pill '+fp.cls;
+
+  // cursul de semnare afecteaza DOAR avansul - ratele vin din proiectia trimestriala
+  const ap=apprPill(appr),al=document.getElementById('appr-pill');
+  al.textContent=ap.text;al.className='pill '+ap.cls;
+
+  const downRon=DOWN_EUR*fx;
+  const baseRateRon=TOTAL_RATE_EUR*BASE_FX;
+
+  // per-year projected rates using quarterly averages
+  const avg1=avgFxForYear(1), avg2=avgFxForYear(2), avg3=avgFxForYear(3);
+  const rateRon1=TOTAL_RATE_EUR*avg1;
+  const rateRon2=TOTAL_RATE_EUR*avg2;
+  const rateRon3=TOTAL_RATE_EUR*avg3;
+  const extra1=rateRon1-baseRateRon;
+  const extra2=rateRon2-baseRateRon;
+  const extra3=rateRon3-baseRateRon;
+  const total36Eur=DOWN_EUR+TOTAL_RATE_EUR*MONTHS;
+  // total RON real: avans la cursul semnarii + rate la cursurile proiectate per an
+  const total36RonReal=downRon+(rateRon1*12)+(rateRon2*12)+(rateRon3*12);
+  // total RON ref: avans la 5.10 + rate la 5.10
+  const total36RonRef=DOWN_EUR*BASE_FX+baseRateRon*MONTHS;
+  // supracost total = doar avans extra + rate extra (rate NU depind de fx)
+  const avansExtra=downRon-DOWN_EUR*BASE_FX;
+  const ratesExtra=(rateRon1*12+rateRon2*12+rateRon3*12)-(baseRateRon*MONTHS);
+  const totalExtraReal=avansExtra+ratesExtra;
+
+  function rateMetric(yr, rateRon, extra, avg){
+    const sign=extra>0?'+':'';
+    const col=extra>0?'delta-bad':'delta-ok';
+    return `<div class="metric">
+      <div class="metric-label">Rată lunară · An ${yr} <span style="font-size:10px;color:var(--text-t)">(avg ${avg.toFixed(2)})</span></div>
+      <div class="metric-value">${fE(TOTAL_RATE_EUR)}</div>
+      <div class="metric-sub">${fR(Math.round(rateRon))}</div>
+      <div class="metric-delta ${col}">${sign}${fR(Math.round(extra))}/lună vs. 5.10</div>
+    </div>`;
+  }
+
+  document.getElementById('metrics').innerHTML=`
+    <div class="metric"><div class="metric-label">Preț total portofoliu</div><div class="metric-value">${fE(TOTAL_EUR)}</div><div class="metric-sub">7 apartamente · fix în EUR</div></div>
+    <div class="metric"><div class="metric-label">Avans (30%) · la ${fx.toFixed(2)}</div><div class="metric-value">${fE(DOWN_EUR)}</div><div class="metric-sub">${fR(Math.round(downRon))}<div class="metric-delta ${(downRon-DOWN_EUR*BASE_FX)>0?'delta-bad':'delta-ok'}">${(downRon-DOWN_EUR*BASE_FX)>0?'+':''}${fR(Math.round(downRon-DOWN_EUR*BASE_FX))} vs. 5.10</div></div></div>
+    ${rateMetric(1,rateRon1,extra1,avg1)}
+    ${rateMetric(2,rateRon2,extra2,avg2)}
+    ${rateMetric(3,rateRon3,extra3,avg3)}
+    <div class="metric"><div class="metric-label">Total plătit în 3 ani (real)</div><div class="metric-value">${fE(Math.round(total36Eur))}</div><div class="metric-sub">${fR(Math.round(total36RonReal))}<div class="metric-delta ${totalExtraReal>0?'delta-bad':'delta-ok'}">${totalExtraReal>0?'+':''}${fR(Math.round(totalExtraReal))} vs. ref. 5.10<br><span style="font-size:10px;color:var(--text-t)">avans ${fR(Math.round(avansExtra)>0?'+'+fR(Math.round(avansExtra)):fR(Math.round(avansExtra)))} · rate ${ratesExtra>0?'+':''}${fR(Math.round(ratesExtra))}</span></div></div></div>
+  `;
+
+  const yr1=TOTAL_EUR*Math.pow(1+appr/100,1);
+  const yr2=TOTAL_EUR*Math.pow(1+appr/100,2);
+  const yr3=TOTAL_EUR*Math.pow(1+appr/100,3);
+  const g1=yr1-TOTAL_EUR,g2=yr2-TOTAL_EUR,g3=yr3-TOTAL_EUR;
+
+  const fcGrid=document.getElementById('fc-grid');
+  fcGrid.innerHTML=`
+    <div class="fc-card${activeYear===1?' active':''}" data-yr="1"><div class="fc-title">Anul 1 · Year 1</div><div class="fc-val">${fE(yr1)}</div><div class="fc-sub">${fR(Math.round(yr1*avg1))}</div><div class="fc-gain">+${fE(g1)} · +${((g1/TOTAL_EUR)*100).toFixed(1)}%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+    <div class="fc-card${activeYear===2?' active':''}" data-yr="2"><div class="fc-title">Anul 2 · Year 2</div><div class="fc-val">${fE(yr2)}</div><div class="fc-sub">${fR(Math.round(yr2*avg2))}</div><div class="fc-gain">+${fE(g2)} · +${((g2/TOTAL_EUR)*100).toFixed(1)}%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+    <div class="fc-card${activeYear===3?' active':''}" data-yr="3"><div class="fc-title">Anul 3 · Year 3</div><div class="fc-val">${fE(yr3)}</div><div class="fc-sub">${fR(Math.round(yr3*avg3))}</div><div class="fc-gain">+${fE(g3)} · +${((g3/TOTAL_EUR)*100).toFixed(1)}%</div><div class="fc-hint">Apasă pentru detalii</div></div>
+  `;
+  document.querySelectorAll('.fc-card').forEach(card=>{
+    card.addEventListener('click',()=>buildBreakdown(parseInt(card.dataset.yr),appr,fx));
+  });
+  if(activeYear) buildBreakdown(activeYear,appr,fx);
+
+  document.getElementById('legend-port').innerHTML=`
+    <span class="legend-item"><span class="legend-dot" style="background:#B5D4F4"></span>Conservator 5%</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#185FA5"></span>Curent (${appr}%)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span>Optimist 12%</span>
+  `;
+  if(chartPort) chartPort.destroy();
+  chartPort=new Chart(document.getElementById('chart-port'),{
+    type:'line',
+    data:{
+      labels:['Acum','An 1','An 2','An 3'],
+      datasets:[
+        {label:'Conservator 5%',data:[TOTAL_EUR,TOTAL_EUR*1.05,TOTAL_EUR*Math.pow(1.05,2),TOTAL_EUR*Math.pow(1.05,3)],borderColor:'#B5D4F4',backgroundColor:'transparent',borderWidth:1.5,pointRadius:3,pointBackgroundColor:'#B5D4F4',borderDash:[4,4]},
+        {label:'Curent',data:[TOTAL_EUR,yr1,yr2,yr3],borderColor:'#185FA5',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#185FA5'},
+        {label:'Optimist 12%',data:[TOTAL_EUR,TOTAL_EUR*1.12,TOTAL_EUR*Math.pow(1.12,2),TOTAL_EUR*Math.pow(1.12,3)],borderColor:'#1D9E75',backgroundColor:'transparent',borderWidth:1.5,pointRadius:3,pointBackgroundColor:'#1D9E75',borderDash:[6,3]},
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:(c)=>'€'+Math.round(c.raw).toLocaleString('ro-RO')}}},scales:{y:{ticks:{callback:(v)=>'€'+Math.round(v/1000)+'k',font:{size:11}},grid:{color:'rgba(128,128,128,0.08)'}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
+  });
+
+  let aptRows='';
+  APTS.forEach(a=>{
+    const avEur=a.price*0.3;
+    aptRows+=`<tr><td><strong>Ap. ${a.id}</strong></td><td><span class="badge ${a.type==='1A'?'badge-s':'badge-d'}">${a.type==='1A'?'Studio':'Dublu'} ${a.type}</span></td><td>Et. ${a.floor}</td><td class="num">${fE(a.price)}</td><td class="num">${fE(avEur)}</td><td class="num">${fR(avEur*fx)}</td><td class="num">${fE(a.rate)}</td><td class="num">${fR(a.rate*fx)}</td></tr>`;
+  });
+  aptRows+=`<tr class="total-row"><td colspan="3">Total</td><td class="num">${fE(TOTAL_EUR)}</td><td class="num">${fE(DOWN_EUR)}</td><td class="num">${fR(DOWN_EUR*fx)}</td><td class="num">${fE(TOTAL_RATE_EUR)}</td><td class="num">${fR(TOTAL_RATE_EUR*fx)}</td></tr>`;
+  document.getElementById('apt-table').innerHTML=`<thead><tr><th>Ap.</th><th>Tip</th><th>Etaj</th><th class="num">Preț (EUR)</th><th class="num">Avans (EUR)</th><th class="num">Avans (RON)</th><th class="num">Rată/lună (EUR)</th><th class="num">Rată/lună (RON)</th></tr></thead><tbody>${aptRows}</tbody>`;
+
+  renderFxChart();
+  renderCostAndVerdict();
+}
+
+document.getElementById('fx-reset-btn').addEventListener('click',()=>{
+  const fx=parseFloat(document.getElementById('fx').value)||5.30;
+  projValues=Array(12).fill(fx);
+  buildFxEditor();
+  renderFxChart();
+  renderCostAndVerdict();
+});
+
+document.getElementById('fx').addEventListener('change',render);
+document.getElementById('fx').addEventListener('input',render);
+document.getElementById('appr').addEventListener('input',render);
+
+buildFxEditor();
+render();
+</script>
+
+
+</body></html>
